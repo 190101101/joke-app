@@ -1,10 +1,32 @@
+import {Route, Switch, Redirect} from 'react-router-dom';
+import Jokes from './pages/Jokes';
+import JokeDetails from './pages/JokeDetails';
+import AddJoke from './pages/AddJoke';
+import NotFound from './pages/NotFound';
+import Layout from './components/layout/Layout';
+
 
 const App = () => {
   return (
-    <>
-      <h1>hello cookie</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Suscipit incidunt eaque quaerat aliquid dolores, quae, mollitia omnis! Qui ratione iste, omnis error. Molestias, quibusdam et optio dolores eligendi accusantium veniam?</p>
-    </>
+    <Layout>
+      <Switch>
+        <Route path='/' exact>
+          <Redirect to="/jokes"/>
+        </Route>
+        <Route path='/jokes' exact>
+          <Jokes/>
+        </Route>
+        <Route path='/jokes/:jokeId'>
+          <JokeDetails/>
+        </Route>
+        <Route path='/add-joke'>
+          <AddJoke/>
+        </Route>
+        <Route path='*'>
+          <NotFound/>
+        </Route>
+      </Switch>
+    </Layout>
   );
 }
 
