@@ -1,7 +1,7 @@
 {
-  "homepage": "https://190101101.github.io/joke-app",
+  "homepage": "https://190101101.github.io/jokes",
   "name": "my-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
